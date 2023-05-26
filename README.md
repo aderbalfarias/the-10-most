@@ -1,23 +1,34 @@
-# The10Most
+# The 10 Most
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
 
-## Development server
+## Instructions on how to run the app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Clone the repository navigate to its folder and install node packages `npm install`<br>
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.<br>
 
-## Code scaffolding
+## Explanation of the project structure
+I used CLI to create a project with default structure and then I created the following folders:
+- src/shared
+- src/environment
+- src/app/components
+- src/app/models
+- src/app/services
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## What areas you focused on getting done
+First thing I did it was retrieve the data from the API using RxJs then I moved on to UI where I tried to have something not too bad on the screen I was not able to get even close of the required design. CSS consumed most of my time I would say.
 
-## Build
+## Identify expected error cases that are unhandled
+- If the API fail nothing will be showed to the user, not even a pop-up with a error message (my bad)
+- I believe there are some missing colors and some are not accurate on Figma design but that is not a big deal
+- Stack Overflow API has a throttling mechanism in place that limits the number of requests done by an IP it could make the API fail
+- CSS I have implemented is not responsive for all screens at the moment
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Improvements in future iterations or with more time
+- Add tests
+- Adjust the structure to supporte growth of the application 
+- Improve the CSS and make it more reusable
+- Improve the responsiveness
+- Improve the UX
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
