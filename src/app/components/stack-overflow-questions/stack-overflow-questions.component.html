@@ -1,5 +1,69 @@
-<ul>
-    <li *ngFor="let item of questions; index as i">
-        #{{i}} > {{item.title}}
-    </li>
-</ul>
+<div class="container">
+    <div class="row justify-content-center pt-5">
+        <div class="col-md-7">
+            <img src="../../../assets/stack-overflow.png" class="" alt="Stack Overflow logo">
+            <div class="d-inline-flex">
+                <div class="align-self-center">
+                    <span class="title text-uppercase">THE</span>
+                </div>
+                <div class="align-self-center">
+                    <p class="one">1</p>
+                </div>
+                <div class="align-self-center p-2">
+                    <img src="../../../assets/zero.png" class="" alt="Stack Overflow logo">
+                </div>
+                <div class="align-self-center">
+                    <p class="title">Most viewed questions of all time.</p>
+                </div>
+            </div>
+            <hr>
+            <p class="description text-center p-3">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.
+            </p>
+            <hr>
+        </div>
+    </div>
+    <div class="list p-5">
+        <div class="row" *ngFor="let item of questions; index as i">
+            <div class="col-md-2 p-5">
+                <p class="index">#{{i + 1 | number:'2.0'}}
+            </div>
+            <div class="col-md-7 p-5">
+                <p class="question">{{item.title | unescape}}
+                <div class="d-inline-flex p-1 owner">
+                    <div class="text text-center">OWNER</div>
+                    <div class="p-1 pl-3">
+                        <img [src]="item.owner.profile_image" class="profile" alt="User profile">
+                    </div>
+                    <div class="align-self-center name">{{item.owner.display_name}}</div>
+                    <div class="clap-hands">
+                        <img src="../../../assets/clap-hands.png" alt="Clap hands">
+                    </div>
+                    <div class="reputation">
+                        <p class="text-center mb-0 reputation-number">{{item.owner.reputation}}</p>
+                        <p class="text-center text-uppercase mb-0 reputation-text">reputation</p>
+                    </div>
+                </div>
+                <div>
+                    <span class="badge bg-secondary tag" *ngFor="let tag of item.tags">{{tag}}</span>
+                </div>
+            </div>
+            <div class="col-3 p-5">
+                <div class="row text-center justify-content-evenly">
+                    <div class="col-md-6 question-details answers">
+                        <p class="number mb-0">{{item.answer_count}}</p>
+                        <p class="text mb-0">ANSWERS</p>
+                    </div>
+                    <div class="col-md-6 question-details views">
+                        <p class="number mb-0">{{item.view_count | million:'1.0-1'}}m</p>
+                        <p class="text mb-0">VIEWS</p>
+                    </div>
+                </div>
+                <div class="row text-center pt-2">
+                    <a [href]="item.link" target="_blank" class="col-md-12 btn-view pb-2 pt-2">VIEW</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
